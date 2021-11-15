@@ -1,0 +1,84 @@
+h1 {
+    text-shadow: 2px 2px #ff0000;;
+}
+
+.content {
+    background-image: url("table.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid green;
+    width: 50%;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 1), 0 10px 30px 0 rgba(0, 0, 0, 1);
+}
+.dealerCard{
+    margin: 0.5em;
+    height: 5em;
+    width: 3em;
+    text-align: center;
+    font-size: 2em;
+    padding: 2em 1em;
+    border: 1px solid green;
+    border-radius: 0.5em;
+    display: inline-block;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 2px gray;
+    background-color: cornsilk;
+}
+
+.guestCard {
+    margin: 0.5em;
+    height: 5em;
+    width: 3em;
+    text-align: center;
+    font-size: 2em;
+    padding: 2em 1em;
+    border: 1px solid green;
+    border-radius: 0.5em;
+    display: inline-block;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 2px gray;
+    background-color: cornsilk;
+}
+
+#result {
+    font-size: 2em;
+    font-style: italic;
+    text-shadow: 1px 1px 1px gray;
+}
+
+.buttons {
+    clear: both;
+}
+
+.buttons ul {
+    list-style: none;
+    padding: 0;
+}
+
+.buttons li {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+button {
+    font-size: 2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 40px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s;
+    background: gray;
+    color: #fff;
+    box-shadow: 0 6px green;
+}
+
+button:hover {
+    box-shadow: 0 4px #ab3c3c;
+    top: 2px;
+}
+
+
