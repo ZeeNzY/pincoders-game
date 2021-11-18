@@ -1,12 +1,22 @@
 var decks = [ '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A' ];
 
 var resultElement = document.getElementById('result');
+var resultDealerElement = document.getElementById('resultDealer');
 var cardDisplay = document.getElementById('cards');
 var dealercardDisplay = document.getElementById('dealerCards');
+
+var dealerTotal = 0;
+var userTotal = 0;
 
 document.getElementById('deal').addEventListener('click', deal);
 document.getElementById('hit').addEventListener('click', addCard);
 document.getElementById('stay').addEventListener('click', addDealerCard);
+
+
+
+
+addDealerCard();
+addDealerCard();
 
 
 function deal() {
@@ -35,10 +45,6 @@ function addCard() {
     checkGameStatus();
 }
 
-
-
-
-
 function addDealerCard() {
     var randomNum = Math.floor(Math.random() * decks.length);
     var newCard = decks[ randomNum ];
@@ -47,32 +53,58 @@ function addDealerCard() {
     newCardElement.classList.add('dealerCard');
     newCardElement.innerText = newCard;
     dealercardDisplay.appendChild(newCardElement);
-    //checkGameStatus();
+    checkGameStatusDealer();
 }
-
-addDealerCard();
-addDealerCard();
-
-
-
-
-
 
 function checkGameStatus() {
     var currentCards = document.getElementsByClassName('guestCard');
 
-    var totalValue = 0;
+    var totalValueUser = 0;
 
     for (var i = 0; i < currentCards.length; i++) {
-        totalValue = totalValue + getCardValue( currentCards[ i ] );
+        totalValueUser = totalValueUser + getCardValue( currentCards[ i ] );
     }
 
-    if ( totalValue === 21 ) {
+    if ( totalValueUser === 21 ) {
         result.innerText = 'BLACKJACK!';
-    } else if ( totalValue > 21 ) {
+    } else if ( totalValueUser > 21 ) {
         result.innerText = 'BUST!';
     }
+
+    userTotal += totalValueUser;
 }
+
+function checkGameStatusDealer() {
+    var currentCards = document.getElementsByClassName('dealerCard');
+
+    var totalValueDealer = 0;
+
+    for (var i = 0; i < currentCards.length; i++) {
+        totalValueDealer = totalValueDealer + getCardValue( currentCards[ i ] );
+    }
+
+    if ( totalValueDealer === 21 ) {
+        resultDealerElement.innerText = 'BLACKJACK!';
+    } else if ( totalValueDealer > 21 ) {
+        resultDealerElement.innerText = 'BUST!';
+    }
+
+    dealerTotal += totalValueDealer;
+}
+
+function sumCompare(){
+
+    if (userTotal > dealerTotal){
+        alert("You Won the Game");
+    }
+    else if (userTotal < dealerTotal){
+        alert ("You Lost the Game");
+    }
+    else if(userTotal === dealerTotal){
+        alert ("It's a Draw Game");
+    }
+}
+
 
 function getCardValue(cardElement) {
     var cardValue = 0;
