@@ -10,10 +10,17 @@ var userTotal = 0;
 
 document.getElementById('deal').addEventListener('click', deal);
 document.getElementById('hit').addEventListener('click', addCard);
-document.getElementById('stay').addEventListener('click', addDealerCard);
+document.getElementById('stay').addEventListener('click', ff);
 
 
+function ff(){
+   
+        addDealerCard();
+        sumCompare();
+       
 
+   
+}
 
 addDealerCard();
 addDealerCard();
