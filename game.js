@@ -2,9 +2,11 @@ var decks = [ '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A' ]
 
 var resultElement = document.getElementById('result');
 var cardDisplay = document.getElementById('cards');
+var dealercardDisplay = document.getElementById('dealerCards');
 
 document.getElementById('deal').addEventListener('click', deal);
 document.getElementById('hit').addEventListener('click', addCard);
+document.getElementById('stay').addEventListener('click', addDealerCard);
 
 
 function deal() {
@@ -32,6 +34,28 @@ function addCard() {
 
     checkGameStatus();
 }
+
+
+
+
+
+function addDealerCard() {
+    var randomNum = Math.floor(Math.random() * decks.length);
+    var newCard = decks[ randomNum ];
+
+    var newCardElement = document.createElement('newCard');
+    newCardElement.classList.add('dealerCard');
+    newCardElement.innerText = newCard;
+    dealercardDisplay.appendChild(newCardElement);
+    //checkGameStatus();
+}
+
+addDealerCard();
+addDealerCard();
+
+
+
+
 
 
 function checkGameStatus() {
