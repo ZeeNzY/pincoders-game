@@ -58,6 +58,10 @@ function addCard() {
 
     checkGameStatus();
     displayPlayerPoints();
+    /*if((userTotal >= 21)) {
+        addDealerCard();
+        sumCompare();
+    }*/
 }
 
 function addDealerCard() {
@@ -118,16 +122,7 @@ function sumCompare(){
     else if(userTotal === dealerTotal){
         alert ("It's a Draw Game");
     }
-    else if (dealerTotal < 21){
-        alert("You Won the Game");
-    }
-    else if ((dealerTotal > 21) && (userTotal <= 21)){
-        alert("You Won the Game");
-    }
-    else if ((userTotal > 21) && (dealerTotal <= 21)){
-        alert("You Lost the Game");
-    }
-
+    
 }
 
 
