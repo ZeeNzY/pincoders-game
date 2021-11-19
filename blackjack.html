@@ -1,48 +1,55 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset='utf-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
-        <link rel='stylesheet' type='text/css' href='style.css'>
 
-        <title>BlackJack</title>
-    </head>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+
+
+    <title>BlackJack</title>
+</head>
+
 <body>
 
-        <div class="content">
-            <header>
-                <h1>PINCODERS' Jack</h1>
-            </header>
+    <div class="content">
+        <header>
+            <h1>PINCODERS' Jack</h1>
+        </header>
 
-            <div id='dealerCards'>
-                <!--
+        <div id='dealerCards'>
+            <!--
                 <div class='dealerCard' style="visibility: hidden;"></div>
                 <div class='dealerCard' style="visibility: hidden;"></div>
                 <div class='dealerCard' style="visibility: hidden;"></div>
                 -->
-            </div>
-            <p id='resultDealer'></p>
+        </div>
+        <p id='resultDealer'></p>
 
-            <div id='cards'>
-                
-                <div class='guestCard' style="visibility: hidden;"></div>
+        <div id='cards'>
 
-                <div class='guestCard' style="visibility: hidden;"></div>
-                
-            </div>
-            
-            <p id='result'></p>
+            <div class='guestCard' style="visibility: hidden;"></div>
 
-            <div class="buttons">
-                <ul>
-                    <li><button id='deal'>Deal Hand</button></li>
-                    <li><button id='hit'>Deal Card</button></li>
-                    <li><button id='stay'>Stay</button></li>
-                </ul>
-            </div>
+            <div class='guestCard' style="visibility: hidden;"></div>
 
         </div>
 
-        <script src='game.js'></script>
+        <p id='result'></p>
+
+        <div class="buttons">
+            <ul>
+                <li><button id='deal'>Deal Hand</button></li>
+                <li><button id='hit'>Deal Card</button></li>
+                <li><button id='stay'>Stay</button></li>
+            </ul>
+        </div>
+
+    </div>
+    <!--
+    <script src='game.js'></script>
+    <script src="cards.js"></script>-->
+    <script src="blackjack.js"></script>
+
 
 </body>
+
 </html>

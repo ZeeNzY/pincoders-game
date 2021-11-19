@@ -1,4 +1,5 @@
-var decks = [ '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A' ];
+var decks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+//var decksymbols = ["&hearts;", "&diams;", "&clubs;", "&spades;"], // HTML symbols for cards
 
 var resultElement = document.getElementById('result');
 var resultDealerElement = document.getElementById('resultDealer');
@@ -13,13 +14,13 @@ document.getElementById('hit').addEventListener('click', addCard);
 document.getElementById('stay').addEventListener('click', ff);
 
 
-function ff(){
-   
-        addDealerCard();
-        sumCompare();
-       
+function ff() {
 
-   
+    addDealerCard();
+    sumCompare();
+
+
+
 }
 
 addDealerCard();
@@ -31,7 +32,7 @@ function deal() {
 
     var currentCards = document.getElementsByClassName('guestCard');
     for (var i = currentCards.length - 1; i > -1; i--) {
-        cardDisplay.removeChild( currentCards[ i ] );
+        cardDisplay.removeChild(currentCards[i]);
     }
 
     addCard();
@@ -42,7 +43,7 @@ function deal() {
 
 function addCard() {
     var randomNum = Math.floor(Math.random() * decks.length);
-    var newCard = decks[ randomNum ];
+    var newCard = decks[randomNum];
 
     var newCardElement = document.createElement('newCard');
     newCardElement.classList.add('guestCard');
@@ -54,7 +55,7 @@ function addCard() {
 
 function addDealerCard() {
     var randomNum = Math.floor(Math.random() * decks.length);
-    var newCard = decks[ randomNum ];
+    var newCard = decks[randomNum];
 
     var newCardElement = document.createElement('newCard');
     newCardElement.classList.add('dealerCard');
@@ -69,12 +70,12 @@ function checkGameStatus() {
     var totalValueUser = 0;
 
     for (var i = 0; i < currentCards.length; i++) {
-        totalValueUser = totalValueUser + getCardValue( currentCards[ i ] );
+        totalValueUser = totalValueUser + getCardValue(currentCards[i]);
     }
 
-    if ( totalValueUser === 21 ) {
+    if (totalValueUser === 21) {
         result.innerText = 'BLACKJACK!';
-    } else if ( totalValueUser > 21 ) {
+    } else if (totalValueUser > 21) {
         result.innerText = 'BUST!';
     }
 
@@ -87,28 +88,26 @@ function checkGameStatusDealer() {
     var totalValueDealer = 0;
 
     for (var i = 0; i < currentCards.length; i++) {
-        totalValueDealer = totalValueDealer + getCardValue( currentCards[ i ] );
+        totalValueDealer = totalValueDealer + getCardValue(currentCards[i]);
     }
 
-    if ( totalValueDealer === 21 ) {
+    if (totalValueDealer === 21) {
         resultDealerElement.innerText = 'BLACKJACK!';
-    } else if ( totalValueDealer > 21 ) {
+    } else if (totalValueDealer > 21) {
         resultDealerElement.innerText = 'BUST!';
     }
 
     dealerTotal += totalValueDealer;
 }
 
-function sumCompare(){
+function sumCompare() {
 
-    if (userTotal > dealerTotal){
+    if (userTotal > dealerTotal) {
         alert("You Won the Game");
-    }
-    else if (userTotal < dealerTotal){
-        alert ("You Lost the Game");
-    }
-    else if(userTotal === dealerTotal){
-        alert ("It's a Draw Game");
+    } else if (userTotal < dealerTotal) {
+        alert("You Lost the Game");
+    } else if (userTotal === dealerTotal) {
+        alert("It's a Draw Game");
     }
 }
 
