@@ -15,21 +15,10 @@ document.getElementById('deal').addEventListener('click', deal);
 document.getElementById('hit').addEventListener('click', addCard);
 document.getElementById('stay').addEventListener('click', ff);
 
-<<<<<<< HEAD
-
-function ff() {
-
-    addDealerCard();
-    sumCompare();
-
-
-
-=======
 function ff(){
         addDealerCard();
         displayDealerPoints(); 
         sumCompare();
->>>>>>> 1328c0fdcfde7285dfd983b6e7472470cbf19f92
 }
 
 addDealerCard();
