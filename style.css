@@ -2,6 +2,41 @@ h1 {
     text-shadow: 2px 2px #ff0000;;
 }
 
+/*points block*/
+.box {
+    position: fixed;
+    width: 14%;
+    height: 15%;           
+    opacity: 0.8;
+    right: 10%;  
+    top: 0;  
+    text-align: center;
+  }
+  .stack-top {
+    z-index: 9;
+    margin: 10px; 
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .boxD {
+    position: fixed;
+    width: 14%;
+    height: 15%;           
+    opacity: 0.8;
+    left: 10%;  
+    top: 0; 
+    text-align: center; 
+  }
+  .stack-topD {
+    z-index: 9;
+    margin: 10px; 
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+
 .content {
     background-image: url("table.jpg");
     background-repeat: no-repeat;

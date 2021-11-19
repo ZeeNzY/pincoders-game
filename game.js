@@ -5,6 +5,8 @@ var resultElement = document.getElementById('result');
 var resultDealerElement = document.getElementById('resultDealer');
 var cardDisplay = document.getElementById('cards');
 var dealercardDisplay = document.getElementById('dealerCards');
+var playerPoints = document.getElementById('playerPoints');
+var dealerPoints = document.getElementById('dealerPoints');
 
 var dealerTotal = 0;
 var userTotal = 0;
@@ -13,6 +15,7 @@ document.getElementById('deal').addEventListener('click', deal);
 document.getElementById('hit').addEventListener('click', addCard);
 document.getElementById('stay').addEventListener('click', ff);
 
+<<<<<<< HEAD
 
 function ff() {
 
@@ -21,10 +24,17 @@ function ff() {
 
 
 
+=======
+function ff(){
+        addDealerCard();
+        displayDealerPoints(); 
+        sumCompare();
+>>>>>>> 1328c0fdcfde7285dfd983b6e7472470cbf19f92
 }
 
 addDealerCard();
 addDealerCard();
+displayDealerPoints();
 
 
 function deal() {
@@ -38,6 +48,14 @@ function deal() {
     addCard();
     addCard();
     checkGameStatus();
+    
+}
+
+function displayDealerPoints(){
+    dealerPoints.innerText = dealerTotal;
+}
+function displayPlayerPoints(){
+    playerPoints.innerText = userTotal;
 }
 
 
@@ -51,6 +69,11 @@ function addCard() {
     cardDisplay.appendChild(newCardElement);
 
     checkGameStatus();
+    displayPlayerPoints();
+    /*if((userTotal >= 21)) {
+        addDealerCard();
+        sumCompare();
+    }*/
 }
 
 function addDealerCard() {
@@ -79,7 +102,7 @@ function checkGameStatus() {
         result.innerText = 'BUST!';
     }
 
-    userTotal += totalValueUser;
+    userTotal = totalValueUser;
 }
 
 function checkGameStatusDealer() {
@@ -97,7 +120,7 @@ function checkGameStatusDealer() {
         resultDealerElement.innerText = 'BUST!';
     }
 
-    dealerTotal += totalValueDealer;
+    dealerTotal = totalValueDealer;
 }
 
 function sumCompare() {
@@ -109,6 +132,7 @@ function sumCompare() {
     } else if (userTotal === dealerTotal) {
         alert("It's a Draw Game");
     }
+    
 }
 
 
